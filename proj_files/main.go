@@ -11,8 +11,8 @@ func main() {
 	m := http.NewServeMux()
 
 	m.HandleFunc("/", handlePage)
-
-	const addr = ":8080"
+	const PORT = ":8080"
+	const addr = PORT
 	srv := http.Server{
 		Handler:      m,
 		Addr:         addr,
@@ -33,6 +33,7 @@ func handlePage(w http.ResponseWriter, r *http.Request) {
 	const page = `<html>
 <head></head>
 <body>
+	<h1> First Server deployed on a docker container! </h1>
 	<p> Hello from Docker! I'm a Go server. </p>
 </body>
 </html>
